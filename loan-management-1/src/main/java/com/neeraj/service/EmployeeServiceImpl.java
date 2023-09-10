@@ -24,5 +24,10 @@ public class EmployeeServiceImpl implements EmployeeService{
 	public List<Employee> getAllEmployees () {
 		return employeeRepository.findAll();
 	}
+	
+	@Override
+	public void remove_employee(Employee to_be_deleted) {
+		employeeRepository.delete(to_be_deleted);
+	}
 
 }

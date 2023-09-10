@@ -35,6 +35,7 @@ public class Employee {
 //	@Min(18)
 	private int age;
 	private double salary;
+	@Email(message="Invalid Email")
 	private String email;
 	private LocalDate doj;
 	@Pattern(regexp = "[987][0-9]{9}")
