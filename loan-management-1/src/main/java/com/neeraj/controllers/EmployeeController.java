@@ -33,6 +33,7 @@ import com.neeraj.service.EmployeeService;
 
 import jakarta.validation.Valid;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/employees")
 public class EmployeeController {

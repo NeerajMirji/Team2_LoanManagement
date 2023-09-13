@@ -12,7 +12,9 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.PastOrPresent;
 import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -22,36 +24,56 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "Employees")
-public class Employee {
+@Table(name="Employees")
+
+public class Employee{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-//	@Column(nullable = false)
-	private String name;
-//	@Pattern(regexp = "(Male|Female)")
+	private int employee_id;
+	
+
+	
+//	@Pattern(regexp="^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[^%$@#&!+=]).{8,}$",message="Password should have atleast 1 uppercase character, 1 lowercase character,1 digit and 1 special character(^%$@#&!+=)")
+	@Column(nullable =false)
+	private String employee_password;
+	
+	@Column(nullable =false)
+	private String employee_name;
+	
+	@Pattern(regexp = "(Male|Female|Other)",message = "Gender should be male, female or other")
 	private String gender;
-//	@Max(value = 60, message = "Age should be between 18 and 60")
-//	@Min(18)
+	
+	@Max(value = 60,message = "Age Should be between 18 and 60")
+	@Min(value = 18,message = "Age Should be between 18 and 60")
 	private int age;
+	
+	@Column(nullable = false)
 	private double salary;
-	@Email(message="Invalid Email")
+	
+	@Email(message = "Invalid Email Id")
 	private String email;
+	
+	@PastOrPresent(message="Date of joining should be in past or present")
 	private LocalDate doj;
-	@Pattern(regexp = "[987][0-9]{9}")
+	
+	@Pattern(regexp = "[9876][0-9]{9}",message = "Mobile number is invalid")
 	private String mobile;
 	
+	
+	private String roles = "user";
+	
+	
 	public int getId() {
-		return id;
+		return employee_id;
 	}
 	public void setId(int id) {
-		this.id = id;
+		this.employee_id = id;
 	}
 	public String getName() {
-		return name;
+		return employee_name;
 	}
 	public void setName(String name) {
-		this.name = name;
+		this.employee_name= name ;
 	}
 	public String getGender() {
 		return gender;
@@ -89,5 +111,9 @@ public class Employee {
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
+	
+	
+	
+	
 
 }

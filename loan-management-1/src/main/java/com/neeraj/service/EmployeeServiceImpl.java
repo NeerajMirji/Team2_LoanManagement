@@ -13,6 +13,16 @@ public class EmployeeServiceImpl implements EmployeeService{
 	@Autowired
 	private EmployeeRepository employeeRepository;
 	
+	
+	
+	public EmployeeRepository getEmployeeRepository() {
+		return employeeRepository;
+	}
+
+	public void setEmployeeRepository(EmployeeRepository employeeRepository) {
+		this.employeeRepository = employeeRepository;
+	}
+
 	@Override
 	public Employee addEmployee(Employee employee) {
 		return employeeRepository.save(employee);
