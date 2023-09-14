@@ -4,4 +4,7 @@
     <fullyQualifiedTypeName name="lombok.Setter"/>
     <fullyQualifiedTypeName name="jakarta.validation.constraints.Size"/>
     <fullyQualifiedTypeName name="jakarta.validation.constraints.PastOrPresent"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
 </qualifiedTypeNameHistroy>

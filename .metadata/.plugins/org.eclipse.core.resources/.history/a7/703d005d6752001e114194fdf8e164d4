@@ -1,0 +1,10 @@
+package com.neeraj.repositories;
+import com.neeraj.entities.Loan_Item;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+
+public class LoanItemRepository {
+
+
+}
+

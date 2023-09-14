@@ -1,0 +1,9 @@
+package com.neeraj.repositories;
+
+import com.neeraj.entities.Loan_Item;
+
+public interface LoanItemRepository extends JpaRepository<Loan_Item, Integer>  {
+
+
+}
+

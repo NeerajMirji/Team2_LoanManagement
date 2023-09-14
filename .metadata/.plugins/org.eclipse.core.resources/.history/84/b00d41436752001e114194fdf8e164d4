@@ -1,0 +1,5 @@
+package com.neeraj.repositories;
+
+public interface LosnItemRepository {
+
+}
